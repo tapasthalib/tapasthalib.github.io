@@ -1,0 +1,348 @@
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff9f0;
+  color: #1e2a4a;
+  line-height: 1.6;
+}
+
+:root {
+  --pale-orange: #ffe6d5;
+  --soft-orange: #ffd9b3;
+  --royal-blue: #1e3a8a;
+  --bright-royal: #2545b0;
+  --white: #ffffff;
+}
+
+h1, h2, h3 {
+  color: var(--royal-blue);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2.2rem; }
+
+h2 {
+  font-size: 1.8rem;
+  border-left: 6px solid var(--soft-orange);
+  padding-left: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--bright-royal);
+}
+
+a {
+  color: var(--royal-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #e07c2c;
+  text-decoration: underline;
+}
+
+/* ========== LAYOUT ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: var(--royal-blue);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.logo p {
+  color: #ffd9b3;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.nav-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  background-color: transparent;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.2s;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--soft-orange);
+  color: var(--royal-blue);
+  text-decoration: none;
+}
+
+/* ========== LANGUAGE BUTTON ========== */
+.lang-btn {
+  background-color: var(--soft-orange);
+  color: var(--royal-blue);
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.lang-btn:hover {
+  background-color: white;
+  color: var(--royal-blue);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-block;
+  background-color: var(--soft-orange);
+  color: var(--royal-blue);
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: var(--soft-orange);
+  color: var(--royal-blue);
+  text-decoration: none;
+}
+
+.btn.full-width {
+  width: 100%;
+}
+
+/* ========== HERO ========== */
+.hero {
+  background: linear-gradient(135deg, #ffe6d5 0%, #ffffff 100%);
+  padding: 3rem 0;
+  border-bottom: 4px solid var(--soft-orange);
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text { flex: 1 1 300px; }
+
+.hero-text h2 {
+  border-left: none;
+  padding-left: 0;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.hero-text p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  background-color: #ffe6d5;
+  border-radius: 30px;
+  padding: 1rem;
+  text-align: center;
+  border: 3px dashed var(--royal-blue);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--royal-blue);
+}
+
+.hero-image p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.upload-mini {
+  background: white;
+  width: 80%;
+  height: 100px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+/* ========== CARDS ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.08);
+  border-bottom: 6px solid var(--soft-orange);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 { margin-bottom: 0.8rem; }
+
+/* ========== INFO HIGHLIGHT ========== */
+.info-highlight {
+  background-color: #fff2e6;
+  border-left: 8px solid var(--royal-blue);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.info-highlight.blue-highlight {
+  background: #e8edff;
+}
+
+/* ========== TWO COLUMN (ABOUT PAGE) ========== */
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.col-box {
+  flex: 1 1 300px;
+  padding: 2rem;
+  border-radius: 24px;
+}
+
+.white-box {
+  background: white;
+  box-shadow: 0 8px 20px rgba(30,58,138,0.05);
+}
+
+.orange-box {
+  background: #fff2e6;
+}
+
+/* ========== GALLERY ========== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  background-color: #fef9f4;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed var(--royal-blue);
+  color: var(--royal-blue);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.gallery-item span {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-item.small {
+  width: 150px;
+  height: 150px;
+  font-size: 0.85rem;
+}
+
+.gallery-item.small span {
+  font-size: 1.5rem;
+}
+
+.mini-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* ========== UPLOAD AREA ========== */
+.upload-area {
+  background: #ffe6d5;
+  border: 2px dashed var(--royal-blue);
+  border-radius: 30px;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pill {
+  background:white;}
