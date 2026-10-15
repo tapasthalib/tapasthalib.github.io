@@ -110,6 +110,7 @@ nav ul li a {
   transition: 0.2s;
   text-decoration: none;
   font-size: 0.95rem;
+  cursor: pointer;
 }
 
 nav ul li a:hover,
@@ -264,7 +265,7 @@ nav ul li a.active {
   background: #e8edff;
 }
 
-/* ========== TWO COLUMN (ABOUT PAGE) ========== */
+/* ========== TWO COLUMN ========== */
 .two-col {
   display: flex;
   flex-wrap: wrap;
@@ -341,8 +342,4 @@ nav ul li a.active {
   border-radius: 30px;
   padding: 2rem;
   text-align: center;
-  margin: 2rem 0;
-}
-
-.pill {
-  background:white;}
+  margin: 2rem
