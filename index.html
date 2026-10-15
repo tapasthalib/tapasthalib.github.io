@@ -27,7 +27,7 @@
           </ul>
         </nav>
 
-        <button id="langToggle" class="lang-btn">🇳🇵 नेपाली</button>
+        <button id="langToggle" class="lang-btn" type="button">🇳🇵 नेपाली</button>
       </div>
     </div>
   </header>
@@ -49,7 +49,7 @@
                data-ne="हामी विशेष गरी महिलाहरूमा केन्द्रित छौं, आश्रय, हेरचाह र समुदाय प्रदान गर्दै। हाम्रो आश्रम सम्मान, न्यानोपन र शान्तिको स्थान हो।">
               We focus exclusively on women, offering shelter, care, and community.
             </p>
-            <a href="#" class="btn" data-page="about" data-en="Learn more →" data-ne="थप जान्नुहोस् →">Learn more →</a>
+            <button class="btn" type="button" data-goto="about" data-en="Learn more →" data-ne="थप जान्नुहोस् →">Learn more →</button>
           </div>
           <div class="hero-image">
             <p data-en="📸 Image placeholder" data-ne="📸 तस्बिरको ठाउँ">📸 Image placeholder</p>
@@ -217,7 +217,7 @@
           <label data-en="Message" data-ne="सन्देश">Message</label>
           <textarea placeholder="Write your message here..."></textarea>
         </div>
-        <button class="btn full-width" data-en="Send message (demo)" data-ne="सन्देश पठाउनुहोस् (डेमो)">Send message (demo)</button>
+        <button class="btn full-width" type="button" onclick="alert('This is a demo form. In the final version, this will send your message.');" data-en="Send message (demo)" data-ne="सन्देश पठाउनुहोस् (डेमो)">Send message (demo)</button>
       </div>
 
       <div class="visit-box">
