@@ -3,7 +3,6 @@
    Handles: page switching + English/Nepali translation
    ========================================================= */
 
-// Wait until the HTML is fully loaded before running any code
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------------------------------------------------------
@@ -13,18 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.nav-link');
 
   function showPage(pageId) {
-    // Hide every page
     pages.forEach(function (page) {
       page.classList.remove('active');
     });
 
-    // Show the page with matching id
     const target = document.getElementById(pageId);
     if (target) {
       target.classList.add('active');
     }
 
-    // Update the "active" class on the nav links
     navLinks.forEach(function (link) {
       if (link.getAttribute('data-page') === pageId) {
         link.classList.add('active');
@@ -33,11 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Attach click handler to every nav link
+  // Nav link clicks
   navLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Attach click handler to any element with data-goto (like the "Learn more" button)
+  // Any element with data-goto (e.g. "Learn more" button)
   const gotoButtons = document.querySelectorAll('[data-goto]');
   gotoButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -58,18 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------------------------------------------------------
      2. LANGUAGE TOGGLE (English <-> Nepali)
      --------------------------------------------------------- */
-  let currentLang = 'en'; // start in English
-
+  let currentLang = 'en';
   const langBtn = document.getElementById('langToggle');
-
-  // Every element that has data-en and data-ne will be translated
   const translatableEls = document.querySelectorAll('[data-en][data-ne]');
 
   function setLanguage(lang) {
     translatableEls.forEach(function (el) {
       const text = el.getAttribute('data-' + lang);
       if (text !== null) {
-        // If the element is a form input/textarea, change placeholder
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.setAttribute('placeholder', text);
         } else {
@@ -78,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Update the button label to show what you can switch TO
     if (lang === 'en') {
       langBtn.textContent = '🇳🇵 नेपाली';
       document.documentElement.lang = 'en';
@@ -88,13 +78,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Toggle on button click
   langBtn.addEventListener('click', function () {
     currentLang = (currentLang === 'en') ? 'ne' : 'en';
     setLanguage(currentLang);
   });
 
-  // Make sure everything starts in English
   setLanguage('en');
 
 });
